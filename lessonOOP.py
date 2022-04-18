@@ -240,7 +240,8 @@ class Character:
 peter = Character('Peter Parker', 80)
 bruce = Character('Bruce Wayne', 85)
 
+
 bruce.beat_up(peter)
 print(peter.status)
 print(bruce.status)
-peter.beat_up(bruce) 
+peter.beat_up(bruce)

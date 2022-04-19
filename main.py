@@ -1,11 +1,11 @@
-""" while True:
+while True:
   try:
     person = int(input("Введите кол-во человек (число): "))
     print()
     break
   except ValueError:
-    print("Вы должны ввести число, попробуйте снова.") """
-# import main
+    print("Вы должны ввести число, попробуйте снова.")
+
 
 
 class Dish:
@@ -19,6 +19,14 @@ class Cook_book:
         self.name = name
         self.content = []
 
+    def mix(self, components):
+        # Добавление списка компонентов в список content:
+        self.content.append([components.ingredients, components.mass, components.unit])
+
+        # Добавление в список content:
+        # self.content.append(components.ingredients)
+        # self.content.append(components.mass)
+        # self.content.append(components.unit)
 
 potatos = Dish('Картошка', 100, 'гр.')
 carrots = Dish('Морковь', 50, 'гр.')
@@ -26,14 +34,71 @@ cucumbers = Dish('Огурцы', 50, 'гр.')
 pea = Dish('Горошек', 30, 'гр.')
 mayonnaise = Dish('Майонез', 70, 'мл.')
 
-salad = Cook_book('Салат')
-print(salad.name)
-print(salad.content)
-salad.content.append(potatos.ingredients)
-salad.content.append(potatos.mass)
-salad.content.append(potatos.unit)
-print(salad.content)
+cheese = Dish('Сыр', 50, 'гр.')
+tomato = Dish('Томаты', 50, 'гр.')
+batter = Dish('Тесто', 100, 'гр.')
+bacon = Dish('Бекон', 30, 'гр.')
+sausage = Dish('Колбаса', 30, 'гр.')
+mushroom = Dish('Грибы', 20, 'гр.')
 
+hurma = Dish('хурма', 60, 'гр.')
+kiwi = Dish('киви', 60, 'гр.')
+tworog = Dish('творог', 60, 'гр.')
+sugar = Dish('сахар', 10, 'гр.')
+honey = Dish('мед', 50, 'гр.')
+
+
+
+salad = Cook_book('Салат')
+pizza = Cook_book('Пицца')
+fruits = Cook_book('Фруктовый десерт')
+#print(salad.__dict__)
+# print(salad.name)
+# print(salad.content)
+
+# добавление ингредиентов в состав с помощью собственного метода
+salad.mix(potatos)
+salad.mix(carrots)
+salad.mix(cucumbers)
+salad.mix(pea)
+salad.mix(mayonnaise)
+
+pizza.mix(cheese)
+pizza.mix(tomato)
+pizza.mix(batter)
+pizza.mix(bacon)
+pizza.mix(sausage)
+pizza.mix(mushroom)
+
+fruits.mix(hurma)
+fruits.mix(kiwi)
+fruits.mix(tworog)
+fruits.mix(sugar)
+fruits.mix(honey)
+
+# print(salad.content)
+# print(pizza.content)
+# print(fruits.content)
+#print(salad.__dict__)
+
+# Вывод на экран состав класса:
+# print(potatos.ingredients, potatos.mass, potatos.unit)
+# print(carrots.ingredients, carrots.mass, carrots.unit)
+# print(cucumbers.ingredients, cucumbers.mass, cucumbers.unit)
+# print(pea.ingredients, pea.mass, pea.unit)
+# print(mayonnaise.ingredients, mayonnaise.mass, mayonnaise.unit)
+
+print(f'{salad.name}:')
+for ingredient, weight, measure in salad.content:
+    print(f'{ingredient}, {weight*person} {measure}')
+print()
+print(f'{pizza.name}:')
+for ingredient, weight, measure in pizza.content:
+    print(f'{ingredient}, {weight*person} {measure}')
+print()
+print(f'{fruits.name}:')
+for ingredient, weight, measure in fruits.content:
+    print(f'{ingredient}, {weight*person} {measure}')
 
 
 # def rate_hw(self, student, course, grade):
@@ -44,38 +109,6 @@ print(salad.content)
 #             student.grades[course] = [grade]
 #     else:
 #         return 'Ошибка'
-
-
-# best_student = Student('Ruoy', 'Eman', 'your_gender')
-# best_student.courses_in_progress += ['Python']
-#
-# cool_mentor = Mentor('Some', 'Buddy')
-# cool_mentor.courses_attached += ['Python']
-#
-# cool_mentor.mix(best_student, 'Python', 10)
-# cool_mentor.mix(best_student, 'Python', 10)
-# cool_mentor.rate_hw(best_student, 'Python', 10)
-#
-# print(best_student.grades)
-
-
-
-print(potatos.ingredients, potatos.mass, potatos.unit)
-print(carrots.ingredients, carrots.mass, carrots.unit)
-print(cucumbers.ingredients, cucumbers.mass, cucumbers.unit)
-print(pea.ingredients, pea.mass, pea.unit)
-print(mayonnaise.ingredients, mayonnaise.mass, mayonnaise.unit)
-
-# print(salad.content)
-
-""" cook = Cook_book('Салат') """
-""" cook = Cook_book('Пицца')
-cook = Cook_book('Фруктовый десерт') """
-""" # print(Cook_book) """
-
-
-
-
 """ cook_book = [
   ['Салат',
     [
@@ -105,10 +138,4 @@ cook = Cook_book('Фруктовый десерт') """
       ['мед', 50, 'гр.'],
     ],
   ],
-]
-
-for dish in cook_book:
-  print(f'{dish[0].capitalize()}:')
-  for ingredients, weight, measure in dish[1]:
-    print(f'{ingredients}, {weight*person} {measure}')
-  print() """
+] """

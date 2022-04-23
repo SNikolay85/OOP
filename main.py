@@ -88,7 +88,7 @@ fruits.mix(honey)
 # print(pea.ingredients, pea.mass, pea.unit)
 # print(mayonnaise.ingredients, mayonnaise.mass, mayonnaise.unit)
 
-print(f'{salad.name}:')
+print(f'{salad.name}: ')
 for ingredient, weight, measure in salad.content:
     print(f'{ingredient}, {weight*person} {measure}')
 print()

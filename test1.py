@@ -142,15 +142,36 @@ second_reviewer.rate_hw(second_student, 'GIT', 10)
 students = []
 students.append(first_student)
 students.append(second_student)
-print(students)
-# first_student
-# def average(student):
-
+#print(students)
+name_course = 'Python'
+def average(students, course):
+    sum_ = 0
+    num_course = []
+    #for stud in students:
+    for name, grades in students.grades.items():
+        print(grades)
+    #     num_course += grades
+    #     length = len(num_course)
+    #     for number in grades:
+    #         sum_ += number
+    # average = sum_ / length
+average(students, name_course)
 # функция для подсчета средней оценки за домашние задания по всем студентам в рамках конкретного курса
 # (в качестве аргументов принимаем список студентов и название курса);
 # функция для подсчета средней оценки за лекции всех лекторов в рамках курса
 # (в качестве аргумента принимаем список лекторов и название курса).
 
+
+# def __average_grades(self):
+#     sum_ = 0
+#     num_course = []
+#     for course, grade in self.grades.items():
+#         num_course += grade
+#         length = len(num_course)
+#         for number in grade:
+#             sum_ += number
+#     average = sum_ / length
+#     return round(average, 2)
 # queries = [
 #   'смотреть сериалы онлайн',
 #   'новости спорта',
